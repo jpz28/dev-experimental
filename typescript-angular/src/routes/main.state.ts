@@ -1,4 +1,4 @@
-namespace app {
+module app {
     'use strict';
 
     angular.module('app').config(config);
@@ -10,8 +10,8 @@ namespace app {
             name: 'default',
             //abstract: true,
             url: '/',
-            templateUrl: '/views/main.html',
-            controller: 'mainCtrl',
+            templateUrl: '/routes/main.html',
+            controller: 'MainController',
             controllerAs: 'main'
         });
 

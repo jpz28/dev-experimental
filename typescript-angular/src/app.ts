@@ -3,5 +3,7 @@ import 'angular';
 import 'angular-ui-router';
 import './app.module';
 import './app.config';
+import './models/models';
+import './services/composersApi';
 import './routes/main.state';
 import './routes/main';

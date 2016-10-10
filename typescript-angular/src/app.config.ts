@@ -1,4 +1,4 @@
-namespace app {
+module app {
     'use strict';
 
     function run($location: ng.ILocationService, $log: ng.ILogService) {

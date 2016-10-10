@@ -1,3 +1,8 @@
 <div class="main">
-    {{vm.name}}
+    {{main.name}}
+    <button ng-click="main.loadComposers()">Load Composers</button>
+    <div>
+        <h4>Composer List</h4>
+        <div ng-repeat="composer in main.composers">{{composer.firstName}}</div>
+    </div>
 </div>

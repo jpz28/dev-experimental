@@ -1,6 +1,4 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-// var config = require('webpack.config');
-// config.plugins.push(new webpack.HotModuleReplacementPlugin())
 var path = require('path');
 
 module.exports = {
@@ -24,7 +22,8 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin([
             { from: './index.html', to: './app/index.html' },
-            { from: './src/views', to: './app/views' }
+            { from: './src/data/*.json', to: './app/data', flatten: true },
+            { from: './src/routes/*.html', to: './app/routes', flatten: true }
         ])
     ],
 
