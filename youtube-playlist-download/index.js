@@ -4,7 +4,6 @@ var readline = require('readline');
 var mkdirp = require('mkdirp');
 var pad = require('pad-left');
 var ytdl = require('youtube-dl');
-var id3 = require('node-id3');
 var request = require('request');
 var ffmetadata = require('ffmetadata');
 
