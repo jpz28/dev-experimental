@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Playlist Downloader</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="./node_modules/reset.css/reset.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap-theme-darkly.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./node_modules/angular-electron/angular-electron.js"></script>
+</head>
+
+<body ng-controller="mainCtrl" ng-cloak style="background-image: url({{vm.album.image}})">
+    <form name="form" ng-submit="submit()">
+        <div class="row">
+            <div class="col-sm-12 form-group">
+                <label>Playlist url</label>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <input ng-model="vm.playlistUrl" name="playlistUrl" class="form-control">
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn" ng-click="loadPlaylistInfo(vm.playlistUrl)">
+                            Load Info &nbsp;<i class="fa fa-cog fa-spin" ng-if="vm.isInfoProcessing"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <label>Album Title</label>
+                <input ng-model="vm.album.title" name="albumTitle" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <label>Artist</label>
+                <input ng-model="vm.album.artist" name="albumArtist" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <label>Tags</label>
+                <input ng-model="vm.album.tags" name="albumTags" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <label>Album image</label>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <input ng-model="vm.album.image" name="albumImage" class="form-control">
+                    </div>
+                    <div class="col-sm-3">
+                        <img class="album-cover" src="{{vm.album.image}}" width="45" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 form-group">
+                <label>Genre</label>
+                <input ng-model="vm.album.genre" name="albumGenre" class="form-control">
+            </div>
+            <div class="col-sm-3 form-group">
+                <label>Year</label>
+                <input ng-model="vm.album.year" name="albumYear" class="form-control">
+            </div>
+            <div class="col-sm-6">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary">
+                    Download Playlist &nbsp;<i class="fa fa-cog fa-spin" ng-if="vm.isProcessing"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</body>
+
+<script>
+    // You can also require other files to run in this process
+    require('./app.js')
+</script>
+
+</html>

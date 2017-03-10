@@ -1,0 +1,15 @@
+body {
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center top;
+    background-blend-mode: soft-light;
+}
+
+.album-cover {
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, .5);
+}
+
+.btn {
+    color: darkgray;
+}
